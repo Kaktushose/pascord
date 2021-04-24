@@ -8,21 +8,19 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        with:
-          persist-credentials: false 
-          fetch-depth: 0
+      - name: Checkout
+      uses: actions/checkout@v2
       - name: Generate Documentation
         run: |
-          mkdir ./docs
-          ./pasdoc/bin/pasdoc `find ./src -type f -name '*.pas'` --output ./docs
+          mkdir ../docs
+          sudo ./pasdoc/bin/pasdoc `find ./src -type f -name '*.pas'` --output ../docs
+      - name: Checkout Docs Branch 
+      run: git checkout docs
+      - name: Move Files
+      run: mv ../docs ./
       - name: Commit Changes
         run: |
-          git add ./docs
+          git add .
           git commit -m "Update Documentation"
       - name: Push Changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: docs  
-
+        run: git push
