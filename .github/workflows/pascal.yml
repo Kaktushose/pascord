@@ -19,8 +19,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Lazarus Environment
-      - uses: gcarreno/setup-lazarus@v2.2.9
+      uses: gcarreno/setup-lazarus@v2.2.9
         with:
           lazarus-version: "dist"
       - name: Build The Main Application 
-      - run: lazbuild ./src/pascord.lpi
+      run: lazbuild ./src/pascord.lpi
