@@ -6,18 +6,18 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Generate Documentation
         run: |
           mkdir ../docs
-          sudo ./pasdoc/bin/pasdoc `find ./src -type f -name '*.pas'` --output ../docs
+          ./pasdoc/bin/pasdoc.exe `find ./src -type f -name '*.pas'` --output ../docs
       - name: Checkout Docs Branch 
         run: git checkout docs
       - name: Move Files
-        run: mv ../docs ./
+        run: move ../docs ./
       - name: Commit & Push Changes
         run: |
           git add .
