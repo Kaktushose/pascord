@@ -9,18 +9,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-      uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: Generate Documentation
         run: |
           mkdir ../docs
           sudo ./pasdoc/bin/pasdoc `find ./src -type f -name '*.pas'` --output ../docs
       - name: Checkout Docs Branch 
-      run: git checkout docs
+        run: git checkout docs
       - name: Move Files
-      run: mv ../docs ./
-      - name: Commit Changes
+        run: mv ../docs ./
+      - name: Commit & Push Changes
         run: |
           git add .
           git commit -m "Update Documentation"
-      - name: Push Changes
-        run: git push
+          git push
