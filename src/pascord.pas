@@ -1,4 +1,4 @@
-{ @abstract(The main unit of pascord. This is a just a test.) 
+{ @abstract(The main unit of pascord.) 
   @author(Kaktushose (https://github.com/Kaktushose)) }
 unit pascord;
 
