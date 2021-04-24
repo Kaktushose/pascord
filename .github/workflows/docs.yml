@@ -1,4 +1,4 @@
-name: Build Documenation
+name: Documenation
 
 on:
   push:
@@ -23,6 +23,8 @@ jobs:
         run: move ../docs ./
       - name: Commit & Push Changes
         run: |
+          git config --global user.email Kaktushose@users.noreply.github.com
+          git config --global user.name Kaktushose
           git add .
           git commit -m "Update Documentation"
           git push
