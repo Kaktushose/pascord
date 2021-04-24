@@ -25,6 +25,5 @@
 src/backup/
 *.bak
 src/lib/
-
 # Application bundle for Mac OS
 *.app/
