@@ -16,8 +16,9 @@ jobs:
         run: mkdir ./docs
         run: sudo ./pasdoc/bin/pasdoc `find ./src -type f -name '*.pas'` --output ./docs
       - name: Commit Changes
-        run: git add ./docs
-        run: git commit -m "Update Documentation"
+        run: |
+          git add ./docs
+          git commit -m "Update Documentation"
       - name: Push Changes
         uses: ad-m/github-push-action@master
         with:
