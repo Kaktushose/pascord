@@ -1,0 +1,7 @@
+A list of potential useful links and resources
+https://gist.github.com/n1tehawk/ba2f7911522d47a18946b35464bfed58#file-webhooks-pas
+https://github.com/pasdoc/pasdoc
+https://github.com/jcmoraisjr/jcore
+https://github.com/mdbs99/xavier
+https://github.com/ahausladen/JsonDataObjects
+https://github.com/Fr0sT-Brutal/awesome-pascal

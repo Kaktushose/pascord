@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Compiler Value="C:\lazarus\fpc\3.2.0\bin\x86_64-win64\fpc.exe" Date="1381338938"/>
+  <Params Value=" -MObjFPC -Scghi -O1 -g -gl -l -vewnhibq -FiE:\programming\pascord\src\lib\x86_64-win64 -FuE:\programming\pascord\src\ -FUE:\programming\pascord\src\lib\x86_64-win64\ -FEE:\programming\pascord\src\ -oE:\programming\pascord\src\pascord.exe pascord.pas"/>
+</CONFIG>
