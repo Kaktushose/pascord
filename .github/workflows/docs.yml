@@ -13,7 +13,8 @@ jobs:
       - name: Generate Documentation
         run: |
           mkdir ../docs
-          ./pasdoc/bin/pasdoc.exe `find ./src -type f -name '*.pas'` --output ../docs
+          cd ./src
+          ../pasdoc/bin/pasdoc.exe (dir -s -name *.pas) --output ../../docs
       - name: Checkout Docs Branch 
         run: git checkout docs
       - name: Move Files
