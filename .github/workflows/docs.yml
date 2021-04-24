@@ -20,7 +20,9 @@ jobs:
       - name: Checkout Docs Branch 
         run: git checkout docs
       - name: Move Files
-        run: move ../docs/* ./
+        run: |
+          git rm -r ./
+          move ../docs/* ./
       - name: Commit & Push Changes
         run: |
           git config --global user.email Kaktushose@users.noreply.github.com
