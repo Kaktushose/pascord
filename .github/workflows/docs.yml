@@ -15,8 +15,8 @@ jobs:
       - name: Generate Documentation
         run: |
           mkdir ../docs
-          cd ./src
-          ../pasdoc/bin/pasdoc.exe (dir -s -name *.pas) --output ../../docs
+          cd ./src/main
+          ../../pasdoc/bin/pasdoc.exe (dir -s -name *.pas, *.lpr) --output ../../../docs
       - name: Checkout Docs Branch 
         run: git checkout docs
       - name: Move Files
@@ -28,5 +28,5 @@ jobs:
           git config --global user.email Kaktushose@users.noreply.github.com
           git config --global user.name Kaktushose
           git add .
-          git commit -m "Update Documentation"
+          git commit -m "[Action] update documentation"
           git push

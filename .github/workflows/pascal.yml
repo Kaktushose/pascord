@@ -16,4 +16,4 @@ jobs:
         with:
           lazarus-version: "dist"
       - name: Build The Main Application 
-        run: lazbuild ./src/pascord.lpi
+        run: lazbuild ./src/main/main.lpi
