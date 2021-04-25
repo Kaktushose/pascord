@@ -22,8 +22,13 @@
 
 # Lazarus backups and unit output folders.
 # These can be changed by user in Lazarus/project options.
-src/backup/
+**/backup/
 *.bak
-src/lib/
+**/lib/
 # Application bundle for Mac OS
 *.app/
+
+
+
+# VS Code
+.vscode
