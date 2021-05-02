@@ -18,7 +18,7 @@ type
   Use @link(TLogger.SetLevel) to set the logging level.  }
   TLogger = class
   private
-    Name: string;
+    name: string;
     level: LoggingLevel; static;
     procedure Print(message: string; loggingLevel: LoggingLevel);
     function CreateStackTrace(e: Exception): string;
@@ -101,7 +101,7 @@ begin
 
   WriteStr(levelString, loggingLevel);
   fmt := '%s [%s] %-5s %s';
-  WriteLn(Format(fmt, [TimeToStr(Now), Name, LevelString, message]));
+  WriteLn(Format(fmt, [TimeToStr(Now), name, LevelString, message]));
 end;
 
 function TLogger.CreateStackTrace(e: Exception): string;
@@ -112,13 +112,13 @@ end;
 constructor TLogger.GetLogger(clazz: TClass);
 begin
   inherited Create;
-  Name := clazz.ClassName;
+  name := clazz.ClassName;
 end;
 
 constructor TLogger.GetLogger(loggerName: string);
 begin
   inherited Create;
-  Name := loggerName;
+  name := loggerName;
 end;
 
 destructor TLogger.Destroy;
