@@ -1,4 +1,6 @@
-unit util;
+{ This unit provides a basic implementation of logging. 
+  @author(Kaktushose (https://github.com/Kaktushose)) }
+unit logging;
 
 {$mode objfpc}{$H+}
 
@@ -9,26 +11,37 @@ uses
 
 type
 
+  { @abstract(An enum describing all available logging levels.)}
   LoggingLevel = (DEBUG, INFO, WARN, ERROR);
 
-  { TLogger }
-
+  { @abstract(This class provides the actual logging functionality.) 
+  Use @link(TLogger.SetLevel) to set the logging level.  }
   TLogger = class
   private
     Name: string;
     level: LoggingLevel; static;
     procedure Print(message: string; loggingLevel: LoggingLevel);
-  public
-    class procedure SetLevel(loggingLevel: LoggingLevel);
-    procedure Debug(message: string);
-    procedure Info(message: string);
-    procedure Warn(message: string);
-    procedure Error(message: string);
-    procedure Error(message: string; e: Exception);
-    procedure Error(e: Exception);
     function CreateStackTrace(e: Exception): string;
+  public
+    { Update the global logging level. }
+    class procedure SetLevel(loggingLevel: LoggingLevel);
+    { Log a debug message. }
+    procedure Debug(message: string);
+    { Log an info message. }
+    procedure Info(message: string);
+    { Log a warn message. }
+    procedure Warn(message: string);
+    { Log a error message. }
+    procedure Error(message: string);
+    { Log a error message and an exception. }
+    procedure Error(message: string; e: Exception);
+    { Log an exception. }
+    procedure Error(e: Exception);
+    { Create a new logger named after a class. }
     constructor GetLogger(clazz: TClass);
+    { Create a new logger with a custom name. }
     constructor GetLogger(loggerName: string);
+    { The destructor. }
     destructor Destroy; override;
   end;
 

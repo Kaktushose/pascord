@@ -3,13 +3,13 @@ program main;
 {$mode objfpc}{$H+}
 
 uses
-  util, SysUtils;
+  logging, SysUtils;
 
 var
   log: TLogger;
 
 begin
   log := TLogger.GetLogger('main');
-  log.Info('Hello World !');
+  log.Info('Hello World!');
   Readln;
 end.

@@ -1,7 +1,7 @@
 [Main]
 StoreRelativePaths=1
 Language=en
-OutputDir=..\docs
+OutputDir=..\..\docs
 GenerateFormat=0
 ProjectName=
 Verbosity=2
@@ -60,13 +60,11 @@ Count=0
 Count=0
 
 [IncludeDirectories]
-Count=1
-Item_0=..\src
+Count=0
 
 [Files]
-Count=2
-Item_0=
-Item_1=..\src\pascord.pas
+Count=1
+Item_0=..\src\main\logging.pas
 
 [AdditionalFiles]
 Count=0
