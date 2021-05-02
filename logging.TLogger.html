@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>util: Class TLogger</title>
+<title>logging: Class TLogger</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="generator" content="PasDoc 0.16.0">
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
@@ -15,13 +15,15 @@
 <div class="one_section"><a class="section" href="#PasDoc-Description">Description</a></div><div class="one_section"><a class="section" href="#PasDoc-Hierarchy">Hierarchy</a></div><div class="one_section">Fields</div><div class="one_section"><a class="section" href="#PasDoc-Methods">Methods</a></div><div class="one_section">Properties</div></div>
 <span id="PasDoc-Description"></span><h2 class="unit">Unit</h2>
 <p class="unitlink">
-<a href="util.html">util</a></p>
+<a href="logging.html">logging</a></p>
 <h2 class="declaration">Declaration</h2>
 <p class="declaration">
 <code>type TLogger = class(TObject)</code></p>
 <h2 class="description">Description</h2>
 <p>
-TLogger</p>
+This class provides the actual logging functionality.</p>
+<p>
+ Use <a class="normal" href="logging.TLogger.html#SetLevel">TLogger.SetLevel</a> to set the logging level.</p>
 <span id="PasDoc-Hierarchy"></span><h2 class="hierarchy">Hierarchy</h2>
 <ul class="hierarchy"><li class="ancestor">TObject</li>
 <li class="thisitem">TLogger</li></ul><h2 class="overview">Overview</h2>
@@ -29,47 +31,43 @@ TLogger</p>
 <table class="summary wide_list">
 <tr class="list">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>class procedure <strong><a href="util.TLogger.html#SetLevel">SetLevel</a></strong>(loggingLevel: <a href="util.html#LoggingLevel">LoggingLevel</a>);</code></td>
+<td class="itemcode"><code>class procedure <strong><a href="logging.TLogger.html#SetLevel">SetLevel</a></strong>(loggingLevel: <a href="logging.html#LoggingLevel">LoggingLevel</a>);</code></td>
 </tr>
 <tr class="list2">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>procedure <strong><a href="util.TLogger.html#Debug">Debug</a></strong>(message: string);</code></td>
+<td class="itemcode"><code>procedure <strong><a href="logging.TLogger.html#Debug">Debug</a></strong>(message: string);</code></td>
 </tr>
 <tr class="list">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>procedure <strong><a href="util.TLogger.html#Info">Info</a></strong>(message: string);</code></td>
+<td class="itemcode"><code>procedure <strong><a href="logging.TLogger.html#Info">Info</a></strong>(message: string);</code></td>
 </tr>
 <tr class="list2">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>procedure <strong><a href="util.TLogger.html#Warn">Warn</a></strong>(message: string);</code></td>
+<td class="itemcode"><code>procedure <strong><a href="logging.TLogger.html#Warn">Warn</a></strong>(message: string);</code></td>
 </tr>
 <tr class="list">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>procedure <strong><a href="util.TLogger.html#Error">Error</a></strong>(message: string);</code></td>
+<td class="itemcode"><code>procedure <strong><a href="logging.TLogger.html#Error">Error</a></strong>(message: string);</code></td>
 </tr>
 <tr class="list2">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>procedure <strong><a href="util.TLogger.html#Error">Error</a></strong>(message: string; e: Exception);</code></td>
+<td class="itemcode"><code>procedure <strong><a href="logging.TLogger.html#Error">Error</a></strong>(message: string; e: Exception);</code></td>
 </tr>
 <tr class="list">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>procedure <strong><a href="util.TLogger.html#Error">Error</a></strong>(e: Exception);</code></td>
+<td class="itemcode"><code>procedure <strong><a href="logging.TLogger.html#Error">Error</a></strong>(e: Exception);</code></td>
 </tr>
 <tr class="list2">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>function <strong><a href="util.TLogger.html#CreateStackTrace">CreateStackTrace</a></strong>(e: Exception): string;</code></td>
+<td class="itemcode"><code>constructor <strong><a href="logging.TLogger.html#GetLogger">GetLogger</a></strong>(clazz: TClass);</code></td>
 </tr>
 <tr class="list">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>constructor <strong><a href="util.TLogger.html#GetLogger">GetLogger</a></strong>(clazz: TClass);</code></td>
+<td class="itemcode"><code>constructor <strong><a href="logging.TLogger.html#GetLogger">GetLogger</a></strong>(loggerName: string);</code></td>
 </tr>
 <tr class="list2">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>constructor <strong><a href="util.TLogger.html#GetLogger">GetLogger</a></strong>(loggerName: string);</code></td>
-</tr>
-<tr class="list">
-<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><code>destructor <strong><a href="util.TLogger.html#Destroy">Destroy</a></strong>; override;</code></td>
+<td class="itemcode"><code>destructor <strong><a href="logging.TLogger.html#Destroy">Destroy</a></strong>; override;</code></td>
 </tr>
 </table>
 <h2 class="description">Description</h2>
@@ -77,10 +75,12 @@ TLogger</p>
 <table class="detail wide_list">
 <tr class="list">
 <td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><span id="SetLevel"></span><code>class procedure <strong>SetLevel</strong>(loggingLevel: <a href="util.html#LoggingLevel">LoggingLevel</a>);</code></td>
+<td class="itemcode"><span id="SetLevel"></span><code>class procedure <strong>SetLevel</strong>(loggingLevel: <a href="logging.html#LoggingLevel">LoggingLevel</a>);</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+Update the global logging level.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -88,7 +88,9 @@ TLogger</p>
 <td class="itemcode"><span id="Debug"></span><code>procedure <strong>Debug</strong>(message: string);</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+Log a debug message.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -96,7 +98,9 @@ TLogger</p>
 <td class="itemcode"><span id="Info"></span><code>procedure <strong>Info</strong>(message: string);</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+Log an info message.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -104,7 +108,9 @@ TLogger</p>
 <td class="itemcode"><span id="Warn"></span><code>procedure <strong>Warn</strong>(message: string);</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+Log a warn message.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -112,7 +118,9 @@ TLogger</p>
 <td class="itemcode"><span id="Error"></span><code>procedure <strong>Error</strong>(message: string);</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+Log a error message.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -120,7 +128,9 @@ TLogger</p>
 <td class="itemcode"><span id="Error"></span><code>procedure <strong>Error</strong>(message: string; e: Exception);</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+Log a error message and an exception.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -128,15 +138,9 @@ TLogger</p>
 <td class="itemcode"><span id="Error"></span><code>procedure <strong>Error</strong>(e: Exception);</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
-</table>
-<table class="detail wide_list">
-<tr class="list">
-<td class="visibility"><a href="legend.html"><img  src="public.gif" alt="Public" title="Public"></a></td>
-<td class="itemcode"><span id="CreateStackTrace"></span><code>function <strong>CreateStackTrace</strong>(e: Exception): string;</code></td>
-</tr>
-<tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+Log an exception.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -144,7 +148,9 @@ TLogger</p>
 <td class="itemcode"><span id="GetLogger"></span><code>constructor <strong>GetLogger</strong>(clazz: TClass);</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+Create a new logger named after a class.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -152,7 +158,9 @@ TLogger</p>
 <td class="itemcode"><span id="GetLogger"></span><code>constructor <strong>GetLogger</strong>(loggerName: string);</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+Create a new logger with a custom name.</p>
+</td></tr>
 </table>
 <table class="detail wide_list">
 <tr class="list">
@@ -160,7 +168,9 @@ TLogger</p>
 <td class="itemcode"><span id="Destroy"></span><code>destructor <strong>Destroy</strong>; override;</code></td>
 </tr>
 <tr><td colspan="2">
-&nbsp;</td></tr>
+<p>
+The destructor.</p>
+</td></tr>
 </table>
 <hr><span class="appinfo"><em>Generated by <a href="https://pasdoc.github.io/">PasDoc 0.16.0</a>. </em>
 </span>
