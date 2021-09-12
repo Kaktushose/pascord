@@ -11,11 +11,11 @@ uses
 
 type
 
-  { @abstract(An enum describing all available logging levels.)}
+  { @abstract(An enum describing all available logging levels.) }
   LoggingLevel = (DEBUG, INFO, WARN, ERROR);
 
   { @abstract(This class provides the actual logging functionality.) 
-  Use @link(TLogger.SetLevel) to set the logging level.  }
+  Use @link(TLogger.SetLevel) to set the logging level. }
   TLogger = class
   private
     name: string;

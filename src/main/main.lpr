@@ -3,13 +3,74 @@ program main;
 {$mode objfpc}{$H+}
 
 uses
-  logging, SysUtils;
+  http, SysUtils;
 
 var
-  log: TLogger;
-
+  client: THttpClient;
+  request : THttpRequest;
 begin
-  log := TLogger.GetLogger('main');
-  log.Info('Hello World!');
-  Readln;
+  client := THttpClient.Create('token');
+
+  request := THttpRequest.Create;
+  request.Method := RequestType.GET;
+  request.Route := 'channels/545967082253189121';
+  
+  WriteLn(client.MakeRequest(request).Get('id'));
 end.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
