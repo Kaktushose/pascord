@@ -11,10 +11,10 @@ uses
   Classes, SysUtils, fphttpclient, opensslsockets, fpjson, jsonparser, logging;
 
 type
-  { @abstract(An enum describing all available http request methods.)}
+  { @abstract(An enum describing all available http request methods.) }
   RequestType = (GET, POST, PUT, DELETE);
 
-  { @abstract(This class describes a http request. Instances of this class can be reused.)}
+  { @abstract(This class describes a http request. Instances of this class can be reused.) }
   THttpRequest = class
   private
     FMethod : RequestType;
@@ -32,7 +32,7 @@ type
     property Body: string read FBody write setBody;
   end;
 
-  { @abstract(A simple http client that can make requests to the discord api. }
+  { @abstract(A simple http client that can make requests to the discord api.) }
   THttpClient = class
   private
     url:   string;
