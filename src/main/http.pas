@@ -24,7 +24,7 @@ type
     procedure setRoute(aRoute : string);
     procedure setBody(aBody : string);
   public
-    { The request method the use. }
+    { The @link(RequestType) to use. }
     property Method: RequestType read FMethod write setRequestType;
     { The route of the request. }
     property Route: string read FRoute write setRoute;

@@ -2,9 +2,9 @@ name: Pascal CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
   pull_request:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
@@ -14,6 +14,6 @@ jobs:
       - name: Set up Lazarus Environment
         uses: gcarreno/setup-lazarus@v2.2.9
         with:
-          lazarus-version: "dist"
-      - name: Build The Main Application 
+          lazarus-version: "2.0.12"
+      - name: Build The Main Application
         run: lazbuild ./src/main/main.lpi
